@@ -6,9 +6,11 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 00:12:39 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/17 10:41:12 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/18 10:25:46 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

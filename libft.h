@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 13:34:56 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/18 10:22:56 by emlecerf         ###   ########.fr       */
+/*   Created: 2020/11/18 10:11:50 by emlecerf          #+#    #+#             */
+/*   Updated: 2020/11/18 10:20:15 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef	LIBFT_H
+# define LIBFT_H
 
-int	ft_atoi(const char *str)
-{
-	int i;
-	int minus;
-	int res;
+int		ft_atoi(const char *str);
 
-	i = 0;
-	minus = 1;
-	res = 0;
-	while ((str[i] >= 11 && str[i] <= 15) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
-	{
-		minus = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + (str[i] - 48);
-		i++;
-	}
-	return (res * minus);
-}
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+#endif
