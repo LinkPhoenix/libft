@@ -6,11 +6,11 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 20:01:36 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/18 17:46:42 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:36:59 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strlcat.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
