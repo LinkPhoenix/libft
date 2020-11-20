@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 13:34:56 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/18 10:22:56 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/20 22:53:56 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	minus = 1;
 	res = 0;
-	while ((str[i] >= 11 && str[i] <= 15) || str[i] == 32)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-')
 	{
