@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 21:02:48 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/20 21:27:28 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/20 23:47:26 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		dest_cpy[i] = src_cpy[i];
-		if ((*src_cpy == (unsigned char)c))
+		if ((src_cpy[i] == (unsigned char)c))
 			return (&dest_cpy[i + 1]);
 		i++;
 	}
