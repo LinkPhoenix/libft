@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:19:32 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/19 16:46:31 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/21 00:08:28 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s_cpy[i] == c_cpy)
+		if (s_cpy[i] == (const char)c_cpy)
 			return ((void *)s_cpy + i);
 		i++;
 	}
