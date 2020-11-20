@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/20 19:44:48 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/20 20:21:27 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS	= ft_atoi.c\
 		  ft_isdigit.c\
 		  ft_isprint.c\
 		  ft_memcpy.c\
+		  ft_memccpy.c\
 		  ft_memchr.c\
 		  ft_memcmp.c\
 		  ft_memmove.c\
