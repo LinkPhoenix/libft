@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 20:09:43 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/18 20:41:16 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/20 11:54:03 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*cpy_s;
 
 	i = 0;
-	cpy_s = s;
 	while (i < n)
 	{
-		cpy_s[i] = 0;
+		((char *)s)[i] = 0;
 		i++;
 	}
 }
