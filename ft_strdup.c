@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 12:40:08 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/20 13:23:39 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/21 01:55:38 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	if (!(s1_cpy = malloc(sizeof(char) * ft_strlen(s1) + 1)))
+	if (!(s1_cpy = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (NULL);
-	while (s1_cpy[i])
+	while (s1[i])
 	{
 		s1_cpy[i] = s1[i];
 		i++;
