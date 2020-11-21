@@ -6,11 +6,11 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 10:11:50 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/21 15:28:11 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/21 17:22:50 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
@@ -29,7 +29,7 @@ int		ft_toupper(int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void    *ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *s, int c, size_t n);
 
@@ -47,7 +47,7 @@ char	*ft_strchr(const char *s, int c);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
-char    *ft_substr(char const *s, unsigned int start, size_t len);
-char    *ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
