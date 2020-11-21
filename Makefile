@@ -6,11 +6,11 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/20 20:21:27 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/21 14:14:05 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft
+NAME	= libft.a
 
 RM		= rm -f
 
@@ -41,24 +41,22 @@ SRCS	= ft_atoi.c\
 		  ft_strnstr.c\
 		  ft_strrchr.c\
 		  ft_tolower.c\
-		  ft_toupper.c
+		  ft_toupper.c\
+		  ft_substr.c
 
 OBJS	= ${SRCS:.c=.o}
 
 all:	$(NAME)
 
-$(NAME):	${OBJS} ar
-	${CC} ${CFLAGS} -o $(NAME) -L. libft
+$(NAME):	${OBJS}
+	ar rc ${NAME} ${OBJS} libft.h
 
 clean:
 	${RM} ${OBJS}
 
 fclean:	clean
-	${RM} $(NAME)
+	${RM} ${NAME}
 
 re:		fclean all
-
-ar:		${OBJS}
-	ar rc libft.a ${OBJS}
 
 .PHONY: all clean fclean re
