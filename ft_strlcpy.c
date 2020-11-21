@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 17:40:18 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/18 10:28:11 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/21 03:02:55 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
-	size_t	s;
+	size_t	i;
 
 	i = 0;
-	s = 0;
-	while (src[i] && s < size)
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
 		i++;
-		s++;
 	}
-	return (s);
+	dst[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
 }
