@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 10:43:40 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/18 12:49:11 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/21 02:20:46 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
+	if (needle[j] == '\0')
+		return ((char *)&haystack[i]);
 	while (haystack[i] && i < len)
 	{
 		while ((needle[j] && (needle[j] == haystack[i] && (i < len))))
