@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 10:11:50 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/22 00:24:18 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/23 22:39:12 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stddef.h>
 
 int		ft_atoi(const char *str);
 
@@ -51,5 +52,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+
+void	ft_putchar_fd(char c, int fd);
 
 #endif
