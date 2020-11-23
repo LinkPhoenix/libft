@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/23 22:44:07 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/23 22:54:32 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRCS	= ft_atoi.c\
 		  ft_strjoin.c\
 		  ft_strtrim.c\
 		  ft_split.c\
-		  ft_putchar_fd.c
+		  ft_putchar_fd.c\
+		  ft_putstr_fd.c
 
 OBJS	= ${SRCS:.c=.o}
 
