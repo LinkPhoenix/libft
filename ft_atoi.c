@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 13:34:56 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/20 22:53:56 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/24 12:12:25 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int minus;
-	int res;
+	long long i;
+	long long minus;
+	long long res;
 
 	i = 0;
 	minus = 1;

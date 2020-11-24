@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/24 03:13:28 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/24 13:08:07 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,10 @@ all:	$(NAME) $(bonjour)
 
 $(NAME):	${OBJS}
 	ar rc ${NAME} ${OBJS} libft.h
+
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRC)
+	gcc -shared -o libft.so $(OBJ)
 
 clean:
 	${RM} ${OBJS}

@@ -6,12 +6,11 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 02:51:15 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/24 04:22:38 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/24 14:14:59 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	int_len(int n)
 {
@@ -36,40 +35,20 @@ char		*ft_itoa(int n)
 
 	number = n;
 	len = int_len(number);
-	printf("len = %d\n", len);
-	if (!(result = malloc(sizeof(char) * len + 1)))
+	if (len == 0)
+		len = 1;
+	if (!(result = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	result[len] = 0;
+	result[len + 1] = 0;
 	if (number < 0)
 	{
 		result[0] = '-';
 		number = number * -1;
-		len--;
 	}
-	while (len-- > 0)
+	while (--len >= 0 && result[len] != '-')
 	{
-		result[len - 1] = ((number % 10) + 48);
+		result[len] = ((number % 10) + 48);
 		number = number / 10;
 	}
 	return (result);
-}
-
-#include <limits.h>
-
-int      main(void)
-{
-  int d = INT_MIN;
-  printf("%d =? %s\n", d, ft_itoa(d));
-
-  d = -13;
-  printf("%d =? %s\n", d, ft_itoa(d));
-
-  d = 0;
-  printf("%d =? %s\n", d, ft_itoa(d));
-
-  d = 5;
-  printf("%d =? %s\n", d, ft_itoa(d));
-
-  d = INT_MAX;
-  printf("%d =? %s\n", d, ft_itoa(d));
 }
