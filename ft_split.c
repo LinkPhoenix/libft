@@ -11,94 +11,58 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	count_sep(char const *s, char sep)
+static int	issep(char const s, char sep)
+{
+	if (s == sep)
+		return (1);
+	return (0);
+}
+
+static int	count_words(char const *s, char c)
 {
 	int i;
 	int count;
+	int check;
 
-	i = 0;
+	i = -1;
 	count = 0;
-	while (s[i])
+	check = 1;
+	while (s[++i])
 	{
-		if (s[i] == sep)
+		if (issep(s[i], c))
+			check++;
+		else if (check)
+		{
 			count++;
-		while(s[i] == sep && s[i + 1] == sep)
-			i++;
-		i++;
-	}
-	i = ft_strlen(s);
-	while (s[i] == sep)
-	{
-		i--;
-		count--;
+			check = 0;
+		}
 	}
 	return (count);
 }
 
-static int	len_word(char const *s, char c)
-{
-	int i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
 char		**ft_split(char const *s, char c)
 {
-	char	**s_return;
-	int		count;
-	int		lenstr;
+	char	**result;
 	int		i;
 	int		j;
 	int		k;
+	int		words;
 
-	while (*s == c)
-		++s;
-	if (*s == '\0')
-		return (NULL);
-	count = count_sep(s, c);
-	if (!(s_return = (char **)malloc(sizeof(char *) * (count + 1))))
-		return (NULL);
 	i = 0;
-	k = 0;
-	while (i <= count)
+	k = -1;
+	words = count_words(s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * words + 1)))
+		return (NULL);
+	while (++k < words)
 	{
-		while (s[k] == c)
-			k++;
-		lenstr = len_word((char *)(s + k), c);
-		if (!(s_return[i] = (char *)malloc(sizeof(char) * lenstr + 1)))
-			return (NULL);
-		j = 0;
-		while (j < lenstr)
-		{
-			s_return[i][j] = s[k];
+		while (issep(s[i], c))
+			i++;
+		j = i;
+		while (!(issep(s[j], c)))
 			j++;
-			k++;
-		}
-		s_return[i][j] = '\0';
-		i++;
+		result[k] = ft_substr(s, i, j - i);
+		i = j;
 	}
-	return (s_return);
+	return (result);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	if(argc)
-// 	printf("############\n");
-// 	char **result;
-// 	int i;
-
-// 	i = 0;
-// 	result = ft_split(argv[1], *argv[2]);
-// 	while (result[i])
-// 	{
-// 		printf("\"%s\"\n", result[i]);
-// 		i++;
-// 	}
-// 	return(0);
-// }
-
