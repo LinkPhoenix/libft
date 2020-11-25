@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/25 21:06:33 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/25 21:54:28 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,8 @@ SRCS	= ft_atoi.c\
 		  ft_lstlast.c\
 		  ft_lstadd_back.c\
 		  ft_lstdelone.c\
-		  ft_lstclear.c
+		  ft_lstclear.c\
+		  ft_lstiter.c
 
 OBJS	= ${SRCS:.c=.o}
 
