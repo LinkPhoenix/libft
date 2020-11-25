@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/25 18:37:57 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/25 18:50:44 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ SRCS	= ft_atoi.c\
 		  ft_strmapi.c\
 		  ft_itoa.c\
 		  ft_lstnew.c\
-		  ft_lstadd_front.c
+		  ft_lstadd_front.c\
+		  ft_lstsize.c
 
 OBJS	= ${SRCS:.c=.o}
 
