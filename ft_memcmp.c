@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:50:24 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/21 01:23:48 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/26 02:53:54 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	s1_cpy = (unsigned const char *)s1;
 	s2_cpy = (unsigned const char *)s2;
-	while ((*s1_cpy || *s2_cpy) && n > 0)
+	while (n > 0)
 	{
 		if (*s1_cpy != *s2_cpy)
 			return (*s1_cpy - *s2_cpy);
