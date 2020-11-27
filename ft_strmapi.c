@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 01:51:12 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/24 02:51:00 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 12:05:53 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*s_cpy;
 
 	i = 0;
-	s_cpy = ft_strdup(s);
+	if (!(s_cpy = ft_strdup(s)))
+		return (NULL);
 	while (s[i])
 	{
 		s_cpy[i] = f(i, s[i]);

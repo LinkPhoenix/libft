@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:14:40 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/22 13:10:20 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 11:35:32 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	if (s1 == NULL || set == NULL)
+	if (s1 == NULL && set == NULL)
 		return (NULL);
 	while (ft_char_in_set(s1[start], set))
 		start++;
@@ -43,7 +43,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 		cpy_len = 1;
 	else
 		cpy_len = ((end - start) + 1);
-	if (!(s1_cpy = (char *)malloc(sizeof(char) * cpy_len)))
+	if (!(s1_cpy = (char *)malloc(sizeof(char) * cpy_len + 1)))
 		return (NULL);
 	i = 0;
 	while (i < cpy_len)
