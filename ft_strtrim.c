@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:14:40 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/27 11:35:32 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:22:53 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		cpy_len;
 
 	start = 0;
-	end = ft_strlen(s1) - 1;
-	if (s1 == NULL && set == NULL)
+	if (!s1 || !set)
 		return (NULL);
+	end = ft_strlen(s1) - 1;
 	while (ft_char_in_set(s1[start], set))
 		start++;
 	while (ft_char_in_set(s1[end], set))
