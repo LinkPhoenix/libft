@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 14:55:31 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/21 16:11:31 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:14:48 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	tab_len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(tab = (char *)malloc(sizeof(char) * tab_len)))
 		return (NULL);
