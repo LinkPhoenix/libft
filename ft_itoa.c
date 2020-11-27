@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 02:51:15 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/27 14:49:38 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 18:07:59 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char		*ft_itoa(int n)
 		len = 1;
 	if (!(result = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
+	result[len] = '\0';
 	if (number < 0)
 	{
 		result[0] = '-';
@@ -49,7 +50,5 @@ char		*ft_itoa(int n)
 		result[len] = ((number % 10) + 48);
 		number = number / 10;
 	}
-	len = (ft_strlen(result));
-	result[len] = '\0';
 	return (result);
 }
