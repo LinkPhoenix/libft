@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 22:04:49 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/26 00:52:52 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 09:32:23 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	void	*issucces;
 
 	new_list = NULL;
-	while(lst && f)
+	while (lst && f)
 	{
 		if (!(issucces = f(lst->content)))
 		{
