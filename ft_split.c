@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 13:39:23 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/27 12:13:28 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:32:39 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char		**ft_split(char const *s, char c)
 
 	i = 0;
 	k = -1;
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	if (!(result = (char **)malloc(sizeof(char *) * words + 1)))
 		return (NULL);
@@ -64,5 +66,6 @@ char		**ft_split(char const *s, char c)
 		result[k] = ft_substr(s, i, j - i);
 		i = j;
 	}
+	result[k] = 0;
 	return (result);
 }
