@@ -28,6 +28,8 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
 	end = ft_len_max(ft_strlen(&s[start]), len);
 	if (!(tab = (char *)malloc(sizeof(*s) * len + 1)))
 		return (NULL);
