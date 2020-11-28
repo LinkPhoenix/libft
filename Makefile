@@ -36,10 +36,10 @@ OBJS		= $(SRCS:.c=.o)
 OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 
 $(NAME):	$(OBJS)
-			ar rc $(NAME) $(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 bonus:		$(NAME) $(OBJS_BONUS)
-			ar rc $(NAME) $(OBJS_BONUS)
+			ar rcs $(NAME) $(OBJS_BONUS)
 
 all:		$(NAME)
 
