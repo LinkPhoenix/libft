@@ -26,28 +26,21 @@ static int	ft_char_in_set(char c, char const *set)
 char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s1_cpy;
-	int		start;
-	int		end;
 	int		i;
-	int		cpy_len;
+	int		len;
 
-	start = 0;
 	if (!s1 || !set)
 		return (NULL);
-	end = ft_strlen(s1) - 1;
-	while (ft_char_in_set(s1[start], set))
-		start++;
-	while (ft_char_in_set(s1[end], set))
-		end--;
-	if (end < 0)
-		cpy_len = 1;
-	else
-		cpy_len = ((end - start) + 1);
-	if (!(s1_cpy = (char *)malloc(sizeof(char) * cpy_len + 1)))
+	while (ft_char_in_set(*s1, set))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_char_in_set(s1[len - 1], set))
+		len--;
+	if (!(s1_cpy = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	i = 0;
-	while (i < cpy_len)
-		s1_cpy[i++] = s1[start++];
+	i = -1;
+	while (++i < len)
+		s1_cpy[i] = s1[i];
 	s1_cpy[i] = 0;
 	return (s1_cpy);
 }
