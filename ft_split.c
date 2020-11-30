@@ -41,21 +41,25 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-char		**ft_split(char const *s, char c)
+static void	*free_result(char **result, int k)
 {
-	char	**result;
-	int		i;
-	int		j;
-	int		k;
-	int		words;
+	while (k > 0)
+	{
+		free(result[k]);
+		k--;
+	}
+	free(result);
+	return (NULL);
+}
+
+static void	*make_result(char const *s, char **result, int words, char c)
+{
+	int i;
+	int j;
+	int k;
 
 	i = 0;
 	k = -1;
-	if (!s)
-		return (NULL);
-	words = count_words(s, c);
-	if (!(result = (char **)malloc(sizeof(char *) * (words + 1))))
-		return (NULL);
 	while (++k < words)
 	{
 		while (issep(s[i], c))
@@ -63,9 +67,24 @@ char		**ft_split(char const *s, char c)
 		j = i;
 		while (!(issep(s[j], c)))
 			j++;
-		result[k] = ft_substr(s, i, j - i);
+		if (!(result[k] = ft_substr(s, i, j - i)))
+			return (free_result(result, k));
 		i = j;
 	}
 	result[k] = 0;
+	return (result);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		words;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * (words + 1))))
+		return (NULL);
+	make_result(s, result, words, c);
 	return (result);
 }
