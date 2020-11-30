@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 13:39:23 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/30 14:11:27 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/30 14:12:44 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	*make_result(char const *s, char **result, int words, char c)
 		while (issep(s[i], c))
 			i++;
 		j = i;
-		while ((!(issep(s[j], c))) && !s[j])
+		while ((!(issep(s[j], c))) && s[j])
 			j++;
 		if (!(result[k] = ft_substr(s, i, j - i)))
 			return (free_result(result, k));
