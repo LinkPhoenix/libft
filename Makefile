@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/30 17:56:38 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/30 17:58:21 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ bonus:		${OBJS} ${OBJS_BONUS}
 all:		$(NAME)
 
 clean:
-			$(RM) $(OBJS) $(OBJS_BONUS)
+			${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
 			${RM} ${NAME}
