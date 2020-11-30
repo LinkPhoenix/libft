@@ -6,7 +6,7 @@
 #    By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 15:12:27 by emlecerf          #+#    #+#              #
-#    Updated: 2020/11/27 19:28:32 by emlecerf         ###   ########.fr        #
+#    Updated: 2020/11/30 17:56:38 by emlecerf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,15 +31,15 @@ SRCS_BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 			  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c\
 			  ft_lstmap.c
 
-OBJS		= $(SRCS:.c=.o)
+OBJS		= ${SRCS:.c=.o}
 
-OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
+OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
-$(NAME):	$(OBJS)
-			ar rcs $(NAME) $(OBJS)
+$(NAME):	${OBJS}
+			ar rcs ${NAME} $(OBJS)
 
-bonus:		$(NAME) $(OBJS_BONUS)
-			ar rcs $(NAME) $(OBJS_BONUS)
+bonus:		${OBJS} ${OBJS_BONUS}
+			ar rcs ${NAME} ${OBJS} $(OBJS_BONUS)
 
 all:		$(NAME)
 
@@ -47,7 +47,7 @@ clean:
 			$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean:		clean
-			$(RM) $(NAME)
+			${RM} ${NAME}
 
 re:			fclean all
 
