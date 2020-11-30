@@ -31,9 +31,9 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
 	end = ft_len_max(ft_strlen(&s[start]), len);
-	if (!(tab = malloc(sizeof(char *) * (len + 1))))
+	if (!(tab = malloc(sizeof(char) * (end + 1))))
 		return (NULL);
-	while (s[start] && len-- > 0)
+	while (s[start] && i < end)
 		tab[i++] = s[start++];
 	tab[i] = '\0';
 	return (tab);
