@@ -6,7 +6,7 @@
 /*   By: emlecerf <emlecerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 13:39:23 by emlecerf          #+#    #+#             */
-/*   Updated: 2020/11/30 14:12:44 by emlecerf         ###   ########.fr       */
+/*   Updated: 2020/11/30 14:57:57 by emlecerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	count_words(char const *s, char c)
 
 static void	*free_result(char **result, int k)
 {
-	while (k > 0)
+	while (k >= 0)
 	{
 		free(result[k]);
 		k--;
@@ -85,6 +85,7 @@ char		**ft_split(char const *s, char c)
 	words = count_words(s, c);
 	if (!(result = (char **)malloc(sizeof(char *) * (words + 1))))
 		return (NULL);
-	make_result(s, result, words, c);
+	if (!(make_result(s, result, words, c)))
+		return (NULL);
 	return (result);
 }
